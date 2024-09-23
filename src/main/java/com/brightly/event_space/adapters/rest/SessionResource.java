@@ -33,7 +33,7 @@ public class SessionResource {
     @Path("/sessions/{eventId}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public List<SessionDomainModel> getSessionList(UUID sessionId) {
-        return sessionDomainService.getSessions(sessionId);
+    public List<SessionDomainModel> getSessionList(UUID eventId) {
+        return sessionDomainService.getSessions(eventId);
     }
 }

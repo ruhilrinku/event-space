@@ -22,7 +22,7 @@ public class SessionDomainService {
         return String.valueOf(sessionDomainModel.getId());
     }
 
-    public List<SessionDomainModel> getSessions(UUID sessionId) {
-        return null;
+    public List<SessionDomainModel> getSessions(UUID eventId) {
+        return sessionRepository.listEventSessions(eventId);
     }
 }
