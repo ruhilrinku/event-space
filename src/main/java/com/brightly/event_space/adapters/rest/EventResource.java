@@ -49,4 +49,12 @@ public class EventResource {
     public EventDomainModel getEventById(@PathParam("eventId") UUID eventId) {
         return eventDomainService.getEventById(eventId);
     }
+
+    @PUT
+    @Path("/event")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public EventDomainModel updateEvent(EventDomainModel request) {
+        return eventDomainService.updateEvent(request);
+    }
 }

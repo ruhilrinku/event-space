@@ -12,4 +12,6 @@ public interface EventRepository {
     List<EventDomainModel> getEventList(String TenantId);
 
     EventDomainModel getEventById(UUID eventId);
+
+    EventDomainModel updateEvent(EventDomainModel eventDomainModel);
 }

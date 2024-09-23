@@ -18,6 +18,7 @@ public class EventDomainService {
 
     @Inject
     EventRepository eventRepository;
+
     public EventDomainModel createEvent(EventDomainModel eventDomainModel) {
         EventDomainModel responseEvent = null;
         try {
@@ -36,4 +37,13 @@ public class EventDomainService {
         return eventRepository.getEventById(eventId);
     }
 
+    public EventDomainModel updateEvent(EventDomainModel eventDomainModel) {
+        EventDomainModel responseEvent = null;
+        try {
+            responseEvent = eventRepository.updateEvent(eventDomainModel);
+        } catch (Exception e) {
+            logger.error("failure during update event, ", e);
+        }
+        return responseEvent;
+    }
 }
