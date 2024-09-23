@@ -48,7 +48,7 @@ public final class DataModelConverter {
     }
 
     // Ticket Converter
-    public static Ticket toTicketDataModel(SessionDomainModel domainModel) {
+    public static Ticket toTicketDataModel(TicketDomainModel domainModel) {
         if (domainModel == null) {
             return null;
         }
