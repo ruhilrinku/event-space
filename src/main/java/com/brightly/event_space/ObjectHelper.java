@@ -2,7 +2,6 @@ package com.brightly.event_space;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -40,10 +39,11 @@ public final class ObjectHelper {
     }
 
     public static <P, T> T mapToOtherObject(P sourceObject, Class<T> targetClass) {
-        return mapper.convertValue(sourceObject, targetClass);
-    }
-
-    public static String getString(Object value) {
-        return value == null ? "" : value.toString();
+        try {
+            return mapper.convertValue(sourceObject, targetClass);
+        } catch (IllegalArgumentException ex) {
+            log.error("error while conversion", ex);
+            return null;
+        }
     }
 }

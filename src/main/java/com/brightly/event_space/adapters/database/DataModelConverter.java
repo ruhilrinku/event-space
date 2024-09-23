@@ -1,14 +1,17 @@
 package com.brightly.event_space.adapters.database;
 
 import com.brightly.event_space.ObjectHelper;
+import com.brightly.event_space.domain.AttendeeDomainModel;
 import com.brightly.event_space.domain.Duration;
 import com.brightly.event_space.domain.SessionDomainModel;
+import com.brightly.event_space.domain.TicketDomainModel;
 
-public final class SessionDataModelConverter {
+public final class DataModelConverter {
 
-    private SessionDataModelConverter() {}
+    private DataModelConverter() {}
 
-    public static EventSession toDataModel(SessionDomainModel domainModel) {
+    // Session Converter
+    public static EventSession toEventSessionDataModel(SessionDomainModel domainModel) {
         if (domainModel == null) {
             return null;
         }
@@ -26,7 +29,7 @@ public final class SessionDataModelConverter {
                 .build();
     }
 
-    public static SessionDomainModel toDomainModel(EventSession eventSession) {
+    public static SessionDomainModel toEventSessionDomainModel(EventSession eventSession) {
         if (eventSession == null) {
             return null;
         }
@@ -42,5 +45,39 @@ public final class SessionDataModelConverter {
                 .description(eventSession.getDescription())
                 .eventId(eventSession.getEventId())
                 .build();
+    }
+
+    // Ticket Converter
+    public static Ticket toTicketDataModel(SessionDomainModel domainModel) {
+        if (domainModel == null) {
+            return null;
+        }
+
+        return ObjectHelper.mapToOtherObject(domainModel, Ticket.class);
+    }
+
+    public static TicketDomainModel toTicketDomainModel(Ticket ticket) {
+        if (ticket == null) {
+            return null;
+        }
+
+        return ObjectHelper.mapToOtherObject(ticket, TicketDomainModel.class);
+    }
+
+    // Attendee Converter
+    public static Attendee toTicketDataModel(AttendeeDomainModel domainModel) {
+        if (domainModel == null) {
+            return null;
+        }
+
+        return ObjectHelper.mapToOtherObject(domainModel, Attendee.class);
+    }
+
+    public static AttendeeDomainModel toTicketDomainModel(Attendee attendee) {
+        if (attendee == null) {
+            return null;
+        }
+
+        return ObjectHelper.mapToOtherObject(attendee, AttendeeDomainModel.class);
     }
 }

@@ -1,15 +1,19 @@
 package com.brightly.event_space.adapters.database;
 
-import jakarta.persistence.*;
-import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.id.UUIDGenerator;
-
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.util.UUID;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.annotations.UuidGenerator;
 
 @Entity
 @Table(name = "ticket")
@@ -21,8 +25,7 @@ import java.util.UUID;
 public class Ticket implements Serializable {
 
     @Id
-    @GeneratedValue(generator = "uuid-generator", strategy = GenerationType.IDENTITY)
-    @GenericGenerator(name = "uuid-generator", type = UUIDGenerator.class)
+    @UuidGenerator
     @Column(name = "id", nullable = false)
     private UUID id;
 

@@ -17,15 +17,15 @@ public class SessionRepositoryImpl implements SessionRepository {
 
     @Override
     public SessionDomainModel createSession(SessionDomainModel sessionDomainModel) {
-        EventSession eventSession = SessionDataModelConverter.toDataModel(sessionDomainModel);
+        EventSession eventSession = DataModelConverter.toEventSessionDataModel(sessionDomainModel);
         sessionDatabaseRepository.persistAndFlush(eventSession);
-        return SessionDataModelConverter.toDomainModel(eventSession);
+        return DataModelConverter.toEventSessionDomainModel(eventSession);
     }
 
     @Override
     public List<SessionDomainModel> listEventSessions(UUID eventId) {
         try (var sessionStream = sessionDatabaseRepository.find("eventId", eventId).stream()) {
-            return sessionStream.map(SessionDataModelConverter::toDomainModel)
+            return sessionStream.map(DataModelConverter::toEventSessionDomainModel)
                     .toList();
         }
     }
