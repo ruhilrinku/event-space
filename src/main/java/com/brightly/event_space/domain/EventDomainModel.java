@@ -23,4 +23,7 @@ public class EventDomainModel {
     private LocalDate endDate;
     private LocalTime startTime;
     private LocalTime endTime;
+
+    private String tenantId;
+    private String status;
 }

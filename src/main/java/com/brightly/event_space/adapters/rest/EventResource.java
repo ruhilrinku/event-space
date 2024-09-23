@@ -4,25 +4,24 @@ import com.brightly.event_space.domain.EventDomainModel;
 import com.brightly.event_space.domain.EventDomainService;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @Transactional
-@Path("/v1/event")
+@Path("/v1")
 public class EventResource {
 
     @Inject
     EventDomainService eventDomainService;
 
     @POST
-    @Path("/create")
+    @Path("/event")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response createEvent(EventDomainModel request) {
@@ -33,5 +32,21 @@ public class EventResource {
         responseMap.put("eventId", eventDomainModel.getId().toString());
 
         return Response.ok().entity(responseMap).build();
+    }
+
+    @GET
+    @Path("/events")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<EventDomainModel> getEventsByTenant(@QueryParam("tenantId") String tenantId) {
+        return eventDomainService.getEventList(tenantId);
+    }
+
+    @GET
+    @Path("/event/{eventId}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public EventDomainModel getEventById(@PathParam("eventId") UUID eventId) {
+        return eventDomainService.getEventById(eventId);
     }
 }

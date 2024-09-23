@@ -23,6 +23,8 @@ public final class EventDataModelConverter {
                 .endDate(eventDomainModel.getEndDate())
                 .startTime(eventDomainModel.getStartTime())
                 .endTime(eventDomainModel.getEndTime())
+                .tenantId(eventDomainModel.getTenantId())
+                .status("DRAFT")
                 .build();
     }
 
@@ -43,6 +45,8 @@ public final class EventDataModelConverter {
                 .endDate(eventDataModel.getEndDate())
                 .startTime(eventDataModel.getStartTime())
                 .endTime(eventDataModel.getEndTime())
+                .tenantId(eventDataModel.getTenantId())
+                .status(eventDataModel.getStatus())
                 .build();
     }
 }

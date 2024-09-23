@@ -37,6 +37,8 @@ public class Event implements Serializable {
     private LocalTime endTime;
     private OffsetDateTime createDate;
     private OffsetDateTime updatedDate;
+    private String tenantId;
+    private String status;
 
     @Version
     private long version;

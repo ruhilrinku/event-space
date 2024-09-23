@@ -7,6 +7,9 @@ import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+import java.util.UUID;
+
 @Transactional
 @ApplicationScoped
 public class EventDomainService {
@@ -23,6 +26,14 @@ public class EventDomainService {
             logger.error("failure during create event, ", e);
         }
         return responseEvent;
+    }
+
+    public List<EventDomainModel> getEventList(String TenantId) {
+        return eventRepository.getEventList(TenantId);
+    }
+
+    public EventDomainModel getEventById(UUID eventId) {
+        return eventRepository.getEventById(eventId);
     }
 
 }
