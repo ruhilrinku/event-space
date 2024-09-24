@@ -29,7 +29,7 @@ public class EventResource {
                 eventDomainService.createEvent(request);
 
         Map<String, String> responseMap = new HashMap<>();
-        responseMap.put("eventId", eventDomainModel.getId().toString());
+        responseMap.put("id", eventDomainModel.getId().toString());
 
         return Response.ok().entity(responseMap).build();
     }
