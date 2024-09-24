@@ -1,5 +1,6 @@
 package com.brightly.event_space.domain;
 
+import java.time.OffsetDateTime;
 import java.util.UUID;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +14,7 @@ public class SessionDomainModel {
     private String eventDay;
     private String startTime;
     private String description;
-    private String speaker;
+    private UUID speakerId;
     private Duration duration;
     private UUID eventId;
     private String tenantId;

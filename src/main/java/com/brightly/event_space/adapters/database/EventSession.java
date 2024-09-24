@@ -3,7 +3,11 @@ package com.brightly.event_space.adapters.database;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -33,7 +37,22 @@ public class EventSession {
     @JdbcTypeCode(SqlTypes.JSON)
     private String duration;
     private String description;
-    private String speaker;
+    private UUID speakerId;
     private UUID eventId;
     private String tenantId;
+
+    private OffsetDateTime createDate;
+    private OffsetDateTime updatedDate;
+    @Version
+    private long version;
+
+    @PrePersist
+    public void onCreate() {
+        createDate = OffsetDateTime.now();
+    }
+
+    @PreUpdate
+    public void onUpdate() {
+        updatedDate = OffsetDateTime.now();
+    }
 }
