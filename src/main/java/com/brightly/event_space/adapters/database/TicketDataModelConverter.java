@@ -21,6 +21,7 @@ public final class TicketDataModelConverter {
                 .description(ticketDomainModel.getDescription())
                 .eventId(ticketDomainModel.getEventId())
                 .tenantId(ticketDomainModel.getTenantId())
+                .status(ticketDomainModel.getStatus())
                 .createDate(OffsetDateTime.now())
                 .build();
     }
@@ -37,6 +38,7 @@ public final class TicketDataModelConverter {
                 .price(ticketDataModel.getPrice())
                 .eventId(ticketDataModel.getEventId())
                 .tenantId(ticketDataModel.getTenantId())
+                .status(ticketDataModel.getStatus())
                 .build();
     }
 }

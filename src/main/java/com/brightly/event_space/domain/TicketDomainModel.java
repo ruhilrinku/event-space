@@ -20,4 +20,5 @@ public class TicketDomainModel {
     private Double price;
     private UUID eventId;
     private String tenantId;
+    private String status;
 }
