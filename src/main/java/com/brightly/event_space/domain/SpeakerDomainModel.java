@@ -1,27 +1,25 @@
 package com.brightly.event_space.domain;
 
+import lombok.*;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.UUID;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AttendeeDomainModel {
+public class SpeakerDomainModel {
 
     private UUID id;
     private String name;
     private String email;
-    private String contact;
-    private String areaOfInterest;
+    private String link;
+    private String avatar;
     private String description;
     private UUID eventId;
-    private String avatar;
 
     private String tenantId;
 }

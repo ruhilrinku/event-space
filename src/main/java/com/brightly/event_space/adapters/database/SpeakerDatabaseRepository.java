@@ -6,5 +6,5 @@ import jakarta.enterprise.context.ApplicationScoped;
 import java.util.UUID;
 
 @ApplicationScoped
-public class AttendeeDatabaseRepository implements PanacheRepositoryBase<Attendee, UUID> {
+public class SpeakerDatabaseRepository implements PanacheRepositoryBase<Speaker, UUID> {
 }
