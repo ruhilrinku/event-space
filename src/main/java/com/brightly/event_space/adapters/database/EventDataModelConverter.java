@@ -1,6 +1,7 @@
 package com.brightly.event_space.adapters.database;
 
 import com.brightly.event_space.domain.EventDomainModel;
+import io.quarkus.runtime.util.StringUtil;
 
 public final class EventDataModelConverter {
 
@@ -24,7 +25,7 @@ public final class EventDataModelConverter {
                 .startTime(eventDomainModel.getStartTime())
                 .endTime(eventDomainModel.getEndTime())
                 .tenantId(eventDomainModel.getTenantId())
-                .status("DRAFT")
+                .status(StringUtil.isNullOrEmpty(eventDomainModel.getStatus()) ? "DRAFT" : eventDomainModel.getStatus())
                 .build();
     }
 
