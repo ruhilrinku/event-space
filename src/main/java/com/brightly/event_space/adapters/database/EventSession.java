@@ -35,4 +35,5 @@ public class EventSession {
     private String description;
     private String speaker;
     private UUID eventId;
+    private String tenantId;
 }

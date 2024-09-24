@@ -24,6 +24,7 @@ public final class SessionDataModelConverter {
                 .speaker(domainModel.getSpeaker())
                 .duration(ObjectHelper.toJsonString(domainModel.getDuration()))
                 .eventId(domainModel.getEventId())
+                .tenantId(domainModel.getTenantId())
                 .build();
     }
 
@@ -42,6 +43,7 @@ public final class SessionDataModelConverter {
                 .speaker(eventSession.getSpeaker())
                 .description(eventSession.getDescription())
                 .eventId(eventSession.getEventId())
+                .tenantId(eventSession.getTenantId())
                 .build();
     }
 

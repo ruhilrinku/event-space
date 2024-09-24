@@ -16,4 +16,5 @@ public class SessionDomainModel {
     private String speaker;
     private Duration duration;
     private UUID eventId;
+    private String tenantId;
 }
