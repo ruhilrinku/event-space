@@ -51,11 +51,13 @@ public class EventRepositoryImpl implements EventRepository {
         event.setName(eventDomainModel.getName());
         event.setDescription(eventDomainModel.getDescription());
         event.setType(eventDomainModel.getType());
+        event.setSummary(eventDomainModel.getSummary());
         event.setLocation(eventDomainModel.getLocation());
         event.setStartDate(eventDomainModel.getStartDate());
         event.setEndDate(eventDomainModel.getEndDate());
         event.setStartTime(eventDomainModel.getStartTime());
-        event.setEndTime(eventDomainModel.getStartTime());
+        event.setEndTime(eventDomainModel.getEndTime());
+        event.setStatus(eventDomainModel.getStatus());
         event.setUpdatedDate(OffsetDateTime.now(ZoneOffset.UTC));
         return EventDataModelConverter.toEventDomainModel(event);
     }
