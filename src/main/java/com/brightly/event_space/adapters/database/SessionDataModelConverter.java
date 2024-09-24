@@ -3,6 +3,8 @@ package com.brightly.event_space.adapters.database;
 import com.brightly.event_space.ObjectHelper;
 import com.brightly.event_space.domain.Duration;
 import com.brightly.event_space.domain.SessionDomainModel;
+import java.util.Map;
+import java.util.UUID;
 
 public final class SessionDataModelConverter {
 
@@ -25,6 +27,26 @@ public final class SessionDataModelConverter {
                 .duration(ObjectHelper.toJsonString(domainModel.getDuration()))
                 .eventId(domainModel.getEventId())
                 .tenantId(domainModel.getTenantId())
+                .build();
+    }
+
+    public static SessionDomainModel toEventSessionDomainModel(EventSession eventSession, Map<UUID, Speaker> speakerMap) {
+        if (eventSession == null) {
+            return null;
+        }
+
+        return SessionDomainModel.builder()
+                .id(eventSession.getId())
+                .sessionType(eventSession.getSessionType())
+                .title(eventSession.getTitle())
+                .eventDay(eventSession.getEventDay())
+                .startTime(eventSession.getStartTime())
+                .duration(ObjectHelper.toObject(eventSession.getDuration(), Duration.class))
+                .speakerId(eventSession.getSpeakerId())
+                .speaker(SpeakerDataModelConverter.toSpeakerDomainModel(speakerMap.get(eventSession.getSpeakerId())))
+                .description(eventSession.getDescription())
+                .eventId(eventSession.getEventId())
+                .tenantId(eventSession.getTenantId())
                 .build();
     }
 
