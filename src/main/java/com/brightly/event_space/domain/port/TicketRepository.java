@@ -10,4 +10,6 @@ public interface TicketRepository {
     TicketDomainModel createTicket(TicketDomainModel ticketDomainModel);
 
     List<TicketDomainModel> getTicketsByEventId(UUID eventId);
+
+    Long getTicketCount(UUID eventId);
 }

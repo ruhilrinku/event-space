@@ -30,4 +30,9 @@ public class TicketRepositoryImpl implements TicketRepository {
                 .map(TicketDataModelConverter::toTicketDomainModel)
                 .toList();
     }
+
+    @Override
+    public Long getTicketCount(UUID eventId) {
+        return ticketDatabaseRepository.count("eventId", eventId);
+    }
 }

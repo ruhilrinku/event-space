@@ -1,5 +1,6 @@
 package com.brightly.event_space.adapters.rest;
 
+import com.brightly.event_space.adapters.rest.models.TicketSaleResponse;
 import com.brightly.event_space.domain.TicketDomainModel;
 import com.brightly.event_space.domain.TicketDomainService;
 import jakarta.inject.Inject;
@@ -40,5 +41,13 @@ public class TicketResource {
     @Produces(MediaType.APPLICATION_JSON)
     public List<TicketDomainModel> getTicketsByEventId(@PathParam("eventId") UUID eventId) {
         return ticketDomainService.getTicketsByEventId(eventId);
+    }
+
+    @GET
+    @Path("/ticket/sales/{eventId}/{email}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public TicketSaleResponse getTicketSales(@PathParam("eventId") UUID eventId,
+                                             @PathParam("email") String email) {
+        return ticketDomainService.getTicketSales(eventId);
     }
 }

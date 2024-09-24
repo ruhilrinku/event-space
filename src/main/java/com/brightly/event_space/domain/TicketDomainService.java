@@ -1,5 +1,6 @@
 package com.brightly.event_space.domain;
 
+import com.brightly.event_space.adapters.rest.models.TicketSaleResponse;
 import com.brightly.event_space.domain.port.SpeakerRepository;
 import com.brightly.event_space.domain.port.TicketRepository;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -32,5 +33,13 @@ public class TicketDomainService {
 
     public List<TicketDomainModel> getTicketsByEventId(UUID eventId) {
         return ticketRepository.getTicketsByEventId(eventId);
+    }
+
+    public TicketSaleResponse getTicketSales(UUID eventId) {
+        Long ticketSold = ticketRepository.getTicketCount(eventId);
+        return TicketSaleResponse.builder()
+                .eventId(eventId)
+                .ticketCount(ticketSold)
+                .build();
     }
 }
