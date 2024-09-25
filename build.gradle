@@ -17,6 +17,8 @@ dependencies {
     implementation 'io.quarkus:quarkus-jdbc-h2'
     implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-hibernate-orm'
+    implementation 'io.quarkus:quarkus-vertx'
+    implementation 'io.quarkus:quarkus-undertow'
 
     implementation 'io.quarkus:quarkus-smallrye-openapi'
     testImplementation 'io.quarkus:quarkus-junit5'
