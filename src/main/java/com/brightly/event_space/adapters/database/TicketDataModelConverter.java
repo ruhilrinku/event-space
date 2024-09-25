@@ -3,6 +3,7 @@ package com.brightly.event_space.adapters.database;
 import com.brightly.event_space.domain.TicketDomainModel;
 
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 
 public final class TicketDataModelConverter {
 
@@ -22,7 +23,7 @@ public final class TicketDataModelConverter {
                 .eventId(ticketDomainModel.getEventId())
                 .tenantId(ticketDomainModel.getTenantId())
                 .status(ticketDomainModel.getStatus())
-                .createDate(OffsetDateTime.now())
+                .createDate(OffsetDateTime.now(ZoneOffset.UTC))
                 .build();
     }
 

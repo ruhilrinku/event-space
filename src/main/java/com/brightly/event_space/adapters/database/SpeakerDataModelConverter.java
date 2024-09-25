@@ -3,6 +3,7 @@ package com.brightly.event_space.adapters.database;
 import com.brightly.event_space.domain.SpeakerDomainModel;
 
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 
 public final class SpeakerDataModelConverter {
 
@@ -23,7 +24,7 @@ public final class SpeakerDataModelConverter {
                 .tenantId(speakerDomainModel.getTenantId())
                 .avatar(speakerDomainModel.getAvatar())
                 .link(speakerDomainModel.getLink())
-                .createDate(OffsetDateTime.now())
+                .createDate(OffsetDateTime.now(ZoneOffset.UTC))
                 .build();
     }
 

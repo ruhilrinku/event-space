@@ -8,6 +8,7 @@ import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Version;
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -48,11 +49,11 @@ public class EventSession {
 
     @PrePersist
     public void onCreate() {
-        createDate = OffsetDateTime.now();
+        createDate = OffsetDateTime.now(ZoneOffset.UTC);
     }
 
     @PreUpdate
     public void onUpdate() {
-        updatedDate = OffsetDateTime.now();
+        updatedDate = OffsetDateTime.now(ZoneOffset.UTC);
     }
 }

@@ -4,7 +4,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
 import jakarta.persistence.Version;
 import java.io.Serializable;
 import java.time.OffsetDateTime;
@@ -17,8 +16,7 @@ import lombok.Setter;
 import org.hibernate.annotations.UuidGenerator;
 
 @Entity
-@Table(name = "attendee", uniqueConstraints = {@UniqueConstraint(name = "UniqueAttendeeEmailAndTenant",
-        columnNames = {"tenantId", "email"})})
+@Table(name = "attendee")
 @Getter
 @Setter
 @Builder
