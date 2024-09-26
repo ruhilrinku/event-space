@@ -24,9 +24,9 @@ VALUES ('0709f769-3617-4a6d-a6f5-242d412f5772', 'Himanshu Sahu', NULL, '', 'UI,S
 ('0ce5a045-e685-4365-ac93-b28508b73ac7', 'Nishant kumar', NULL, '', 'Sales,Design,Marketing', '', '9a5cdc56-6c5a-4716-8d0c-dc1a7f2fc3da', 'https://hackathon-bs.github.io/ES-Attendees/nishant.png', 'EVENTSPACE', 1);
 
 INSERT INTO session (id, session_type, title, event_day, start_time, description, speaker_id, duration, event_id, version)
-VALUES ('aac38861-586c-4793-8bc5-0871a60f0f74', 'Registration', 'Registration', '2024-09-246', '10:30:00', '<p>Registration at Info Desk for the event.</p>', NULL, '{\"hour\": \"1\", \"min\": \"0\"}', '9a5cdc56-6c5a-4716-8d0c-dc1a7f2fc3da', 1),
-('62eea645-88e2-4305-b7ee-00845a0489f6', 'Breakfast', 'Breakfast', '2024-09-24', '11:00:00', '<p>Have some amazing breakfast before diving deep into the sessions.</p>', '0ac53e96-4f26-413f-b5e5-f5c1b666fd79', '{\"hour\": \"1\", \"min\": \"0\"}', '9a5cdc56-6c5a-4716-8d0c-dc1a7f2fc3da', 1),
-('0304602d-f066-4188-b1f5-664a8f835b6a', 'Keynote', 'Keynote', '2024-09-24', '17:00:00', '<p>Keynote by esteemed speakers</p>', 'f95ca6d3-53a1-4e2b-97ab-7339dcbbbfad', '{\"hour\": \"1\", \"min\": \"0\"}', '9a5cdc56-6c5a-4716-8d0c-dc1a7f2fc3da', 1);
+VALUES ('aac38861-586c-4793-8bc5-0871a60f0f74', 'Registration', 'Registration', '2024-09-246', '10:30:00', '<p>Registration at Info Desk for the event.</p>', NULL, '{"hour": "1", "min": "0"}', '9a5cdc56-6c5a-4716-8d0c-dc1a7f2fc3da', 1),
+('62eea645-88e2-4305-b7ee-00845a0489f6', 'Breakfast', 'Breakfast', '2024-09-24', '11:00:00', '<p>Have some amazing breakfast before diving deep into the sessions.</p>', '0ac53e96-4f26-413f-b5e5-f5c1b666fd79', '{"hour": "1", "min": "0"}', '9a5cdc56-6c5a-4716-8d0c-dc1a7f2fc3da', 1),
+('0304602d-f066-4188-b1f5-664a8f835b6a', 'Keynote', 'Keynote', '2024-09-24', '17:00:00', '<p>Keynote by esteemed speakers</p>', 'f95ca6d3-53a1-4e2b-97ab-7339dcbbbfad', '{"hour": "1", "min": "0"}', '9a5cdc56-6c5a-4716-8d0c-dc1a7f2fc3da', 1);
 
 INSERT INTO speaker (id, name, email, link, avatar, description, event_id, tenant_id, version)
 VALUES ('0ac53e96-4f26-413f-b5e5-f5c1b666fd79', 'Himanshu Sahu', 'himanshu.sahu@brightlysoftware.com', 'https://hackathon-bs.github.io/ES-Attendees/himanshu', '', '<p>A renowned data scientist with numerous publications and awards.</p>', '9a5cdc56-6c5a-4716-8d0c-dc1a7f2fc3da', NULL, 1),

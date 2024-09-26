@@ -35,7 +35,7 @@ public class EventSession {
     private String title;
     private String eventDay;
     private String startTime;
-    @JdbcTypeCode(SqlTypes.JSON)
+    //@JdbcTypeCode(SqlTypes.JSON)
     private String duration;
     private String description;
     private UUID speakerId;
