@@ -29,7 +29,7 @@ VALUES ('aac38861-586c-4793-8bc5-0871a60f0f74', 'Registration', 'Registration', 
 ('0304602d-f066-4188-b1f5-664a8f835b6a', 'Keynote', 'Keynote', '2024-09-24', '17:00:00', '<p>Keynote by esteemed speakers</p>', 'f95ca6d3-53a1-4e2b-97ab-7339dcbbbfad', '{"hour": "1", "min": "0"}', '9a5cdc56-6c5a-4716-8d0c-dc1a7f2fc3da', 1);
 
 INSERT INTO speaker (id, name, email, link, avatar, description, event_id, tenant_id, version)
-VALUES ('0ac53e96-4f26-413f-b5e5-f5c1b666fd79', 'Himanshu Sahu', 'himanshu.sahu@brightlysoftware.com', 'https://hackathon-bs.github.io/ES-Attendees/himanshu', '', '<p>A renowned data scientist with numerous publications and awards.</p>', '9a5cdc56-6c5a-4716-8d0c-dc1a7f2fc3da', NULL, 1),
+VALUES ('0ac53e96-4f26-413f-b5e5-f5c1b666fd79', 'Himanshu Sahu', 'himanshu.sahu@brightlysoftware.com', 'https://hackathon-bs.github.io/ES-Attendees/himanshu.jpg', '', '<p>A renowned data scientist with numerous publications and awards.</p>', '9a5cdc56-6c5a-4716-8d0c-dc1a7f2fc3da', NULL, 1),
 ('f95ca6d3-53a1-4e2b-97ab-7339dcbbbfad', 'Mohit Kumar', 'mohit.kumar@brightlysoftware.com', 'https://hackathon-bs.github.io/ES-Attendees/mohit.png', '', '<p>An expert in AI and machine learning, Mohit has over 20 years of experience.</p>', '9a5cdc56-6c5a-4716-8d0c-dc1a7f2fc3da', NULL, 1);
 
 INSERT INTO sponsor (id, name, category, website_link, logo, description, event_id, tenant_id, version)
